@@ -1,5 +1,4 @@
 
-```markdown
 # W3Tracker - Web3 Task Guardian 🛡️
 
 ![W3Tracker Interface](screenshot.png)
