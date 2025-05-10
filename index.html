@@ -2,64 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W3Drop - Web3 Quest Monitor</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>W3Tracker - My Web3 Projects</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>W3Drop</h1>
-            <div class="beast-mode">Beast Mode: <span id="beastModeStatus">ON</span></div>
+            <h1>My Web3 Projects</h1>
+            <button id="newProjectBtn">+ New Project</button>
         </header>
         
-        <div class="stats-panel" id="statsPanel"></div>
-        
-        <div class="projects-grid" id="projectsGrid"></div>
-        
-        <div class="add-project">
-            <button class="add-project-btn" id="addProjectBtn">
-                <span>+ Add New Project</span>
-            </button>
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Projects will be inserted here by JavaScript -->
         </div>
     </div>
 
-    <!-- Add Project Modal -->
-    <div id="addProjectModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New Project</h2>
-            <form id="projectForm">
-                <div class="form-group">
-                    <label for="projectName">Project Name*</label>
-                    <input type="text" id="projectName" required>
-                </div>
-                <div class="form-group">
-                    <label for="projectLogo">Logo (2 letters)</label>
-                    <input type="text" id="projectLogo" maxlength="2" placeholder="ZK">
-                </div>
-                <div class="form-group">
-                    <label for="startDate">Start Date*</label>
-                    <input type="date" id="startDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="deadline">Deadline*</label>
-                    <input type="date" id="deadline" required>
-                </div>
-                <div class="form-group">
-                    <label for="duration">Duration (days)*</label>
-                    <input type="number" id="duration" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="fundsRaised">Funds Raised</label>
-                    <input type="text" id="fundsRaised" placeholder="$120M">
-                </div>
-                <button type="submit" class="btn btn-primary">Add Project</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="data/dummyData.js"></script>
-    <script src="js/app.js"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 </html>
