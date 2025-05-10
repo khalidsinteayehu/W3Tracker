@@ -432,6 +432,37 @@ class W3Drop {
             };
         });
     }
+  // Add this new method
+  updateTaskStatus(projectId, taskId, newStatus) {
+    const projects = this.getProjects();
+    const project = projects.find(p => p.id === projectId);
+    if (project) {
+      const task = project.tasks.find(t => t.id === taskId);
+      if (task) {
+        task.status = newStatus;
+        this.saveProjects(projects);
+      }
+    }
+  }
+
+  // Add this new method
+  addTask(projectId, taskType) {
+    const projects = this.getProjects();
+    const project = projects.find(p => p.id === projectId);
+    if (project) {
+      const newTaskId = project.tasks.length > 0 
+        ? Math.max(...project.tasks.map(t => t.id)) + 1 
+        : 1;
+      
+      project.tasks.push({
+        id: newTaskId,
+        type: taskType,
+        status: "Not Started"
+      });
+      this.saveProjects(projects);
+      this.renderProjects();
+    }
+  }
 }
 
 // Initialize the application
