@@ -1,22 +1,64 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>W3Tracker - My Web3 Projects</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>My Web3 Projects</h1>
-            <button id="newProjectBtn">+ New Project</button>
-        </header>
-        
-        <div class="projects-grid" id="projectsGrid">
-            <!-- Projects will be inserted here by JavaScript -->
-        </div>
-    </div>
-
-    <script src="./js/app.js" type="module"></script>
-</body>
-</html>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>W3Drop - Web3 Quest Tracker</title>
+                <link rel="stylesheet" href="/css/style.css">
+                </head>
+                <body>
+                
+                    <!-- Onboarding Component -->
+                        <div id="onboarding-container">
+                                <div class="onboarding-overlay"></div>
+                                        <div class="onboarding-box">
+                                                    <h2>Welcome to W3Drop!</h2>
+                                                                <p>Let's get you started with the basics of using your Web3 Quest Tracker!</p>
+                                                                            <ol>
+                                                                                            <li>Start by creating your first project using the <strong>Quick Add</strong> button or pressing <kbd>Ctrl + Q</kbd>.</li>
+                                                                                                            <li>Use <strong>Drag & Drop</strong> to organize your task columns.</li>
+                                                                                                                            <li>Want to track your progress? Use the <strong>Timeline View</strong> under your project’s settings.</li>
+                                                                                                                                            <li>Set custom <strong>recurring tasks</strong> for automated reminders.</li>
+                                                                                                                                                        </ol>
+                                                                                                                                                                    <div class="onboarding-buttons">
+                                                                                                                                                                                    <button id="start-btn" class="btn primary">Got it! Let's Go!</button>
+                                                                                                                                                                                                    <button id="skip-btn" class="btn secondary">Skip Tour</button>
+                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                <!-- Main Content Area -->
+                                                                                                                                                                                                                                    <div id="app">
+                                                                                                                                                                                                                                            <!-- Your application content goes here -->
+                                                                                                                                                                                                                                                    <h1>Welcome to W3Drop!</h1>
+                                                                                                                                                                                                                                                            <div class="task-container">
+                                                                                                                                                                                                                                                                        <!-- Projects and tasks will be dynamically loaded here -->
+                                                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                        <!-- Include JavaScript Files -->
+                                                                                                                                                                                                                                                                                            <script src="/js/app.js" type="module"></script>
+                                                                                                                                                                                                                                                                                                <script src="/js/lib/csv-parser.js" type="module"></script>
+                                                                                                                                                                                                                                                                                                    <script src="/js/lib/history-manager.js" type="module"></script>
+                                                                                                                                                                                                                                                                                                        <script src="/js/modules/analytics.js" type="module"></script>
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                            <script>
+                                                                                                                                                                                                                                                                                                                    // Onboarding logic (if not yet completed, show onboarding)
+                                                                                                                                                                                                                                                                                                                            if (!localStorage.getItem('onboarding-complete')) {
+                                                                                                                                                                                                                                                                                                                                        document.getElementById('onboarding-container').style.display = 'block';
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                        document.getElementById('start-btn').addEventListener('click', function() {
+                                                                                                                                                                                                                                                                                                                                                                    document.getElementById('onboarding-container').style.display = 'none';
+                                                                                                                                                                                                                                                                                                                                                                                localStorage.setItem('onboarding-complete', 'true');
+                                                                                                                                                                                                                                                                                                                                                                                        });
+                                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                document.getElementById('skip-btn').addEventListener('click', function() {
+                                                                                                                                                                                                                                                                                                                                                                                                            document.getElementById('onboarding-container').style.display = 'none';
+                                                                                                                                                                                                                                                                                                                                                                                                                        localStorage.setItem('onboarding-complete', 'true');
+                                                                                                                                                                                                                                                                                                                                                                                                                                });
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                    </html>-->
